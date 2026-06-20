@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budget Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Budget Tracker</h1>
+
+    <div class="summary">
+
+        <div class="card income">
+            <h3>Income</h3>
+            <p id="income">₹0</p>
+        </div>
+
+        <div class="card expense">
+            <h3>Expense</h3>
+            <p id="expense">₹0</p>
+        </div>
+
+        <div class="card balance">
+            <h3>Balance</h3>
+            <p id="balance">₹0</p>
+        </div>
+
+    </div>
+
+    <form id="transactionForm">
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Transaction Title"
+            required
+        >
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Amount"
+            required
+        >
+
+        <select id="type">
+
+            <option value="income">
+                Income
+            </option>
+
+            <option value="expense">
+                Expense
+            </option>
+
+        </select>
+
+        <button>Add</button>
+
+    </form>
+
+    <div class="filter">
+
+        <input type="date" id="startDate">
+
+        <input type="date" id="endDate">
+
+        <button onclick="loadTransactions()">
+            Filter
+        </button>
+
+    </div>
+
+    <canvas id="budgetChart"></canvas>
+
+    <h2>Transaction History</h2>
+
+    <ul id="history"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
